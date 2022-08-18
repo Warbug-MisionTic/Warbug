@@ -1,2 +1,2 @@
 # Warbug
-Se utilizara para la mquetacion html y css
+Se utilizara para la maquetacion html y css
