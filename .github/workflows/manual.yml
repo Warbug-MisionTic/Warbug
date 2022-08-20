@@ -1,8 +1,10 @@
+### ⬆ IMPORTANT PART ⬆ ###
+
 name: Build & Push to Heroku Docker Registry
 
 on:
   push:
-    branches: [ development ]
+    branches: [development]
 
 jobs:
   build:
