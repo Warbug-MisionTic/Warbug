@@ -21,8 +21,9 @@ jobs:
         with:
           java-version: 11
       - name: Build with Maven
-          run: mvn -B package --file pom.xml
-### ⬇ IMPORTANT PART ⬇ ###
+        run: mvn -B package --file pom.xml
+
+      ### ⬇ IMPORTANT PART ⬇ ###
 
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
