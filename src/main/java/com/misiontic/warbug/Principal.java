@@ -40,9 +40,16 @@ public class Principal {
         empleado.setNombreEmpleado("Glenda Trivino");
         System.out.println(empleado.getNombreEmpleado());
 
-        System.out.println("3. Es posible leer y modificar la empresaa a la que pertenece el Empleado");
+        System.out.println("3. Es posible leer y modificar el correo del Empleado");
+        empleado.setCorreoEmpleado("glendatrivino@yahoo.es");
+        System.out.println(empleado.getCorreoEmpleado());
+
+        System.out.println("4. Es posible leer y modificar la empresaa a la que pertenece el Empleado");
         empleado.setEmpresaEmpleado("Microsoft");
         System.out.println(empleado.getEmpresaEmpleado());
 
+        System.out.println("5. Es posible leer y modificar el rol del Empleado");
+        empleado.setRolEmpleado("Administrador");
+        System.out.println(empleado.getRolEmpleado());
     }
 }
