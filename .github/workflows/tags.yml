@@ -2,10 +2,7 @@
 name: Deploy to heroku Produccion.
 
 # Run workflow on every push to master branch.
-on:
-  push:
-    tags:
-      - '*'
+on: [workflow_dispatch]
 
 # Your workflows jobs.
 jobs:
