@@ -1,8 +1,11 @@
 # Your workflow name.
-name: Deploy to heroku Testing.
+name: Deploy to heroku Produccion.
 
 # Run workflow on every push to master branch.
-on: [workflow_dispatch]
+on:
+  push:
+    tags:
+      - '*'
 
 # Your workflows jobs.
 jobs:
@@ -38,7 +41,7 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent.
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME_TESTING }}
 
           # (Optional, default: "./")
           # Dockerfile directory.
