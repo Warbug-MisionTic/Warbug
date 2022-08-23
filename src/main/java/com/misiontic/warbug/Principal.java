@@ -43,5 +43,6 @@ public class Principal {
         System.out.println("3. Es posible leer y modificar la empresaa a la que pertenece el Empleado");
         empleado.setEmpresaEmpleado("Microsoft");
         System.out.println(empleado.getEmpresaEmpleado());
+
     }
 }
