@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsuarioController {
     @RequestMapping(value = "/usuarios", method = RequestMethod.GET)
     public String getUsuario(){
-        return "Hola Mundo";
+        return "Hola a todos";
     }
 }
