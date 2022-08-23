@@ -11,5 +11,6 @@ public class MovimientoDinero {
     private double montoPositivo;
     private double montoNegativo;
     private String conceptoMovimiento;
+    private String usuarioEncargado;
 
 }
