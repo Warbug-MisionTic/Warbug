@@ -7,13 +7,13 @@ import com.misiontic.warbug.models.MovimientoDinero;
 public class Principal {
     public static void main(String[] args) {
 
+        //Modelar una empresa como una clase de Java
         //Se crea la instancia para el objeto de la clase Empresa
         System.out.println("----------------Modelar una empresa como una clase de java-------------------");
         Empresa empresaInicial = new Empresa("Carvajal S.A.","Cl 27#23-34, Cali, Valle del cauca",1234567890L,"111110-1");
         System.out.println(empresaInicial);
 
         //Se crea instancia para leer y modificar nombre Empresa
-
         empresaInicial.setNombreEmpresa("Warbug");
         System.out.println(empresaInicial.getNombreEmpresa());
 
@@ -29,31 +29,33 @@ public class Principal {
         empresaInicial.setNitEmpresa("1113678321-1");
         System.out.println(empresaInicial.getNitEmpresa());
 
-        //------------------------------------------------------------------
+        //-----------------------------------------------------------------
         //Modelar un empleado como una clase de java
+        //Se crea la instancia para el objeto de la clase empleado
         Empleado empleado = new Empleado("Mauricio", "mauro.h54@elcorreo.com", "Warbug", "Cajero");
-        System.out.println("----------------Modelar un empleado como una clase de java-------------------");
 
-        System.out.println("1. Es posible crear una nueva instancia de la clase Empleado");
+        //1. Es posible crear una nueva instancia de la clase Empleado
         System.out.println(empleado);
 
-        System.out.println("2. Es posible leer y modificar el nombre del Empleado");
+        //2. Es posible leer y modificar el nombre del Empleado
         empleado.setNombreEmpleado("Glenda Trivino");
         System.out.println(empleado.getNombreEmpleado());
 
-        System.out.println("3. Es posible leer y modificar el correo del Empleado");
+        //3. Es posible leer y modificar el correo del Empleado"
         empleado.setCorreoEmpleado("glendatrivino@yahoo.es");
         System.out.println(empleado.getCorreoEmpleado());
 
-        System.out.println("4. Es posible leer y modificar la empresaa a la que pertenece el Empleado");
+        //4. Es posible leer y modificar la empresaa a la que pertenece el Empleado
         empleado.setEmpresaEmpleado("Microsoft");
         System.out.println(empleado.getEmpresaEmpleado());
 
-        System.out.println("5. Es posible leer y modificar el rol del Empleado");
+        //5. Es posible leer y modificar el rol del Empleado
         empleado.setRolEmpleado("Administrador");
         System.out.println(empleado.getRolEmpleado());
-        //------------------------------------------------------------------
+
+        //---------------------------------------------------------------------------------------------
         //Modelar el movimiento de dinero como una clase de java
+        //Se crea la instancia para el objeto de la clase MovimientoDinero
         MovimientoDinero movimiento = new MovimientoDinero(45456,5454,-654465,"Ingreso","");
         System.out.println(movimiento);
 
@@ -79,6 +81,5 @@ public class Principal {
         System.out.println("Es posible definir que usuario registro el movimiento");
         movimiento.setUsuarioEncargado("Juan Diego Jimenez");
         System.out.println(movimiento.getUsuarioEncargado());
-
     }
 }
