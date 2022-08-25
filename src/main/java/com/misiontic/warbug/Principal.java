@@ -1,9 +1,5 @@
 package com.misiontic.warbug;
 
-import com.misiontic.warbug.models.Empleado;
-import com.misiontic.warbug.models.Empresa;
-import com.misiontic.warbug.models.MovimientoDinero;
-
 public class Principal {
     public static void main(String[] args) {
 
