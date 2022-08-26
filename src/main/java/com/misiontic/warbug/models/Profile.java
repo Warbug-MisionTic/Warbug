@@ -9,7 +9,7 @@ public class Profile {
  private String idProfile;
  private String image;
  private String phone;
- private Employee user;
+ private Employee employee;
  private LocalDateTime createdAt;
  private LocalDateTime updatedAt;
 

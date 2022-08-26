@@ -9,6 +9,7 @@ public class Transaction {
     private Long idTransaction;
     private String concept;
     private float amount;
+    private Employee employee;
     private Enterprise enterprise;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
