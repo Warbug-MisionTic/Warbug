@@ -1,8 +1,10 @@
 package com.misiontic.warbug.models;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Data
 public class Enterprise {
     private Long idEnterprise;
     private String name;
