@@ -1,5 +1,6 @@
 package com.misiontic.warbug.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "employee")
-@JsonIgnoreProperties({"idEnterprise"})
+
 public class Employee {
 
     @Id
@@ -27,8 +28,9 @@ public class Employee {
     private LocalDateTime updatedAt;
 
     //Inyección de dependencias
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Employee.class)
-    @JoinColumn(name = "idEnterprise")
+    @ManyToOne
+    //@JsonBackReference
+    @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
     //private List<Transaction> transactions;
