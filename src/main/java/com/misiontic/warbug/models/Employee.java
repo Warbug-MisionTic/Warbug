@@ -28,9 +28,10 @@ public class Employee {
     private LocalDateTime updatedAt;
 
     //Inyección de dependencias
-    @ManyToOne
-    //@JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
+    @JsonBackReference
+
     private Enterprise enterprise;
 
     //private List<Transaction> transactions;

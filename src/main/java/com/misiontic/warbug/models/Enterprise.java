@@ -1,5 +1,6 @@
 package com.misiontic.warbug.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -33,6 +34,7 @@ public class Enterprise {
 
     //Inyección de dependencias
 
-    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Employee> employees;
 }
