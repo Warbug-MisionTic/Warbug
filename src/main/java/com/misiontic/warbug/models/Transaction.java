@@ -1,5 +1,5 @@
 package com.misiontic.warbug.models;
-
+/*
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -14,3 +14,4 @@ public class Transaction {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
+*/

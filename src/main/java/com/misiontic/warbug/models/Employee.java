@@ -34,7 +34,7 @@ public class Employee {
     //private List<Transaction> transactions;
 
     //@OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
-    private Profile profile;
+    //private Profile profile;
 
 
 

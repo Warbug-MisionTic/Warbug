@@ -1,4 +1,4 @@
-package com.misiontic.warbug.models;
+/*package com.misiontic.warbug.models;
 
 import lombok.Data;
 
@@ -16,3 +16,4 @@ public class Profile {
 
 
 }
+*/
