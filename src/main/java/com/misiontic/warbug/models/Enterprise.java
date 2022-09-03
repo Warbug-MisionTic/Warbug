@@ -30,4 +30,9 @@ public class Enterprise {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt;
+
+    //Inyección de dependencias
+
+    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL)
+    private List<Employee> employees;
 }

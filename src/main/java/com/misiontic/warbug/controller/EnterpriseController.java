@@ -15,28 +15,28 @@ public class EnterpriseController {
     private IEnterpriseService service;
 
     @GetMapping
-    public List<Enterprise> readAll() throws Exception{
+    public List<Enterprise> readAll() throws Exception {
         return service.readAll();
     }
 
     @PostMapping
-    public Enterprise create(@RequestBody Enterprise enterprise) throws Exception{
+    public Enterprise create(@RequestBody Enterprise enterprise) throws Exception {
         return service.create(enterprise);
     }
 
-    @GetMapping ("/{id}")
-    public Enterprise readById(@PathVariable("id") Long id) throws Exception{
+    @GetMapping("/{id}")
+    public Enterprise readById(@PathVariable("id") Long id) throws Exception {
         return service.readById(id);
     }
+
     @PutMapping("/{id}")
-    public Enterprise update(@RequestBody Enterprise enterprise, @PathVariable("id") Long id) throws  Exception{
+    public Enterprise update(@RequestBody Enterprise enterprise, @PathVariable("id") Long id) throws Exception {
         return service.update(enterprise, id);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Long id) throws Exception{
+    public void delete(@PathVariable("id") Long id) throws Exception {
         service.delete(id);
 
-
-
     }
-    }
+}

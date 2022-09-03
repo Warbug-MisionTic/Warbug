@@ -6,7 +6,9 @@ import com.misiontic.warbug.service.IEnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class EnterpriseServicelmpl implements IEnterpriseService {
@@ -24,6 +26,25 @@ public class EnterpriseServicelmpl implements IEnterpriseService {
     public Enterprise update(Enterprise enterprise, Long id) throws Exception {
         Enterprise enDB = repo.findById(id).get();
         enDB.setName(enterprise.getName());
+
+        if (Objects.nonNull(enterprise.getName()) && !"".equalsIgnoreCase(enterprise.getName())) {
+            enDB.setName(enterprise.getName());
+        }
+
+        if (Objects.nonNull(enterprise.getDocument()) && !"".equalsIgnoreCase(enterprise.getDocument())) {
+            enDB.setDocument(enterprise.getDocument());
+        }
+
+        if (Objects.nonNull(enterprise.getPhone()) && !"".equalsIgnoreCase(enterprise.getPhone())) {
+            enDB.setPhone(enterprise.getPhone());
+        }
+
+        if (Objects.nonNull(enterprise.getAddress()) && !"".equalsIgnoreCase(enterprise.getAddress())) {
+            enDB.setAddress(enterprise.getAddress());
+        }
+        enDB.setUpdatedAt(LocalDateTime.now());
+        enDB.setCreatedAt(enDB.getCreatedAt());
+
         return repo.save(enDB);
     }
 
