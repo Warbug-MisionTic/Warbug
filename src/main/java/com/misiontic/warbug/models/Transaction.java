@@ -1,5 +1,6 @@
-package com.misiontic.warbug.models;
 /*
+package com.misiontic.warbug.models;
+
 import lombok.Data;
 
 import java.time.LocalDateTime;
