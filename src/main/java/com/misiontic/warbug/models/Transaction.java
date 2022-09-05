@@ -1,18 +1,38 @@
-/*
+
 package com.misiontic.warbug.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
+@Entity
+@Table (name ="transaction")
 public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTransaction;
+
+    @Column(length = 50, nullable = false)
     private String concept;
+
+    @Column(length = 50, nullable = false)
     private float amount;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_employee_id",nullable = false)
+    @JsonBackReference
     private Employee employee;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_enterprise_id",nullable = false)
+    @JsonBackReference
     private Enterprise enterprise;
-    private LocalDateTime createdAt;
+
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
     private LocalDateTime updatedAt;
 }
-*/
