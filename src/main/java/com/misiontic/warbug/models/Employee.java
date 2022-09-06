@@ -1,19 +1,15 @@
 package com.misiontic.warbug.models;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Setter
+@RequiredArgsConstructor
 @Entity
 @Table(name = "employee")
-
 
 public class Employee {
 
@@ -44,4 +40,40 @@ public class Employee {
 
     @Column(length = 50, nullable = false)
     private String password;
+
+    public Long getIdEmployee() {
+        return idEmployee;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Enum_RoleName getRole() {
+        return role;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

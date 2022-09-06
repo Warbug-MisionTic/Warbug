@@ -1,18 +1,14 @@
 package com.misiontic.warbug.models;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
-@Data
+@Setter
+@RequiredArgsConstructor
 @Entity
 @Table(name = "enterprise")
-
 
 public class Enterprise {
 
@@ -43,4 +39,39 @@ public class Enterprise {
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions;
 
+    public Long getIdEnterprise() {
+        return idEnterprise;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
 }

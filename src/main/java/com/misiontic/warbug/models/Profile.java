@@ -1,14 +1,12 @@
 package com.misiontic.warbug.models;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
+@Setter
+@RequiredArgsConstructor
 @Entity
 @Table(name = "profile")
 
@@ -31,4 +29,28 @@ public class Profile {
  private LocalDateTime createdAt = LocalDateTime.now();
 
  private LocalDateTime updatedAt;
+
+ public Long getIdProfile() {
+  return idProfile;
+ }
+
+ public String getImage() {
+  return image;
+ }
+
+ public String getPhone() {
+  return phone;
+ }
+
+ public Employee getEmployee() {
+  return employee;
+ }
+
+ public LocalDateTime getCreatedAt() {
+  return createdAt;
+ }
+
+ public LocalDateTime getUpdatedAt() {
+  return updatedAt;
+ }
 }
