@@ -21,7 +21,8 @@ public class EnterpriseController {
 
     @PostMapping
     public Enterprise create(@RequestBody Enterprise enterprise) throws Exception {
-        return service.create(enterprise);
+        //return service.create(enterprise);
+        return service.saveTransactional(enterprise, enterprise.getDetailsEmployees());
     }
 
     @GetMapping("/{id}")
