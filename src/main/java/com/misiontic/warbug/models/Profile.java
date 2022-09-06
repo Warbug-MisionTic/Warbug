@@ -1,6 +1,8 @@
 package com.misiontic.warbug.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,10 +12,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "profile")
 
+
 public class Profile {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
- private String idProfile;
+ private Long idProfile;
 
  @Column(length = 50, nullable = false, unique = true)
  private String image;
@@ -21,15 +24,11 @@ public class Profile {
  @Column(length = 50, nullable = false, unique = true)
  private String phone;
 
- @OneToOne(fetch = FetchType.LAZY)
+ @OneToOne()
  @JoinColumn(name = "fk_employee_id",nullable = false)
- @JsonBackReference
  private Employee employee;
 
  private LocalDateTime createdAt = LocalDateTime.now();
 
  private LocalDateTime updatedAt;
-
-
-
 }

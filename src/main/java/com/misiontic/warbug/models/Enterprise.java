@@ -1,6 +1,8 @@
 package com.misiontic.warbug.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -10,6 +12,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "enterprise")
+
+
 public class Enterprise {
 
     @Id
@@ -33,8 +37,10 @@ public class Enterprise {
     private LocalDateTime updatedAt;
 
     //Inyección de dependencias
+    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Employee> employees;
 
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<Employee> employees;
+    private List<Transaction> transactions;
+
 }

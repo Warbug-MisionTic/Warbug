@@ -2,6 +2,8 @@
 package com.misiontic.warbug.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table (name ="transaction")
+
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +26,10 @@ public class Transaction {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_employee_id",nullable = false)
-    @JsonBackReference
     private Employee employee;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
-    @JsonBackReference
     private Enterprise enterprise;
 
 
