@@ -1,13 +1,11 @@
 package com.misiontic.warbug.service.lmpl;
 
-import com.misiontic.warbug.models.Employee;
 import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.repository.IEnterpriseRepository;
 import com.misiontic.warbug.service.IEnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -63,13 +61,5 @@ public class EnterpriseServicelmpl implements IEnterpriseService {
     @Override
     public void delete(Long id) throws Exception {
             repo.deleteById(id);
-    }
-
-    @Transactional
-    @Override
-    public Enterprise saveTransactional(Enterprise enterprise, List<Employee> details) {
-        details.forEach(d->d.setEnterprise(enterprise));
-        enterprise.setDetailsEmployees(details);
-        return repo.save(enterprise);
     }
 }
