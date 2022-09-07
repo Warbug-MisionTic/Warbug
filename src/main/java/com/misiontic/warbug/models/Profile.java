@@ -1,12 +1,10 @@
 package com.misiontic.warbug.models;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Setter
-@RequiredArgsConstructor
+@Data
 @Entity
 @Table(name = "profile")
 
@@ -30,27 +28,4 @@ public class Profile {
 
  private LocalDateTime updatedAt;
 
- public Long getIdProfile() {
-  return idProfile;
- }
-
- public String getImage() {
-  return image;
- }
-
- public String getPhone() {
-  return phone;
- }
-
- public Employee getEmployee() {
-  return employee;
- }
-
- public LocalDateTime getCreatedAt() {
-  return createdAt;
- }
-
- public LocalDateTime getUpdatedAt() {
-  return updatedAt;
- }
 }

@@ -1,13 +1,11 @@
 package com.misiontic.warbug.models;
 
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Setter
-@RequiredArgsConstructor
+@Data
 @Entity
 @Table (name ="transaction")
 
@@ -35,31 +33,4 @@ public class Transaction {
 
     private LocalDateTime updatedAt;
 
-    public Long getIdTransaction() {
-        return idTransaction;
-    }
-
-    public String getConcept() {
-        return concept;
-    }
-
-    public float getAmount() {
-        return amount;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public Enterprise getEnterprise() {
-        return enterprise;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 }
