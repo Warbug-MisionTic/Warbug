@@ -29,7 +29,6 @@ public class Enterprise {
 
     private LocalDateTime updatedAt;
 
-    //Inyección de dependencias
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employees;
 
