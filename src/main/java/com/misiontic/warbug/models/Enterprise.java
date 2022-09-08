@@ -30,11 +30,11 @@ public class Enterprise {
 
     private LocalDateTime updatedAt;
 
-    @JsonManagedReference(value = "employee-trans")
+    @JsonManagedReference()
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employees;
 
-    @JsonManagedReference(value = "enterprise-trans")
+    @JsonManagedReference(value = "enterprise")
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions;
 

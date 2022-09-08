@@ -21,16 +21,15 @@ public class Transaction {
     @Column(length = 50, nullable = false)
     private float amount;
 
-    @JsonBackReference(value = "employee-trans")
+    @JsonBackReference(value = "employee")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_employee_id",nullable = false)
     private Employee employee;
 
-    @JsonBackReference(value = "entreprise-trans")
+    @JsonBackReference( value = "enterprise")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
-
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
