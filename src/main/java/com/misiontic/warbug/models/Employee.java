@@ -1,7 +1,6 @@
 package com.misiontic.warbug.models;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,22 +23,23 @@ public class Employee {
     @Column(length = 50, nullable = false)
     private Enum_RoleName role;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
 
     //Inyección de dependencias
+    @JsonBackReference()
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
-    @JsonBackReference
-
     private Enterprise enterprise;
 
-    //private List<Transaction> transactions;
+    @JsonManagedReference(value = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transaction> transactions;
 
-    //@OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
-    //private Profile profile;
+    @JsonManagedReference()
+    @OneToOne(mappedBy="employee",fetch = FetchType.LAZY)
+    private Profile profile;
 
-
-
-
+    @Column(length = 50, nullable = false)
+    private String password;
 }
