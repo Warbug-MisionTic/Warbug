@@ -21,7 +21,7 @@ public class Profile {
  @Column(length = 50, nullable = false, unique = true)
  private String phone;
 
- @JsonBackReference
+ @JsonBackReference(value = "profile-trans")
  @OneToOne()
  @JoinColumn(name = "fk_employee_id",nullable = false)
  private Employee employee;

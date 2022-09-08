@@ -27,16 +27,16 @@ public class Employee {
     private LocalDateTime updatedAt;
 
     //Inyección de dependencias
-    @JsonBackReference
+    @JsonBackReference(value = "enterprise-trans")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "employee-trans")
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions;
 
-    @JsonManagedReference
+    @JsonManagedReference(value = "profile-trans")
     @OneToOne(mappedBy="employee",fetch = FetchType.LAZY)
     private Profile profile;
 

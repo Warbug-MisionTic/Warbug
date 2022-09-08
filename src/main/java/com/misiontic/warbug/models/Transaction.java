@@ -21,12 +21,12 @@ public class Transaction {
     @Column(length = 50, nullable = false)
     private float amount;
 
-    @JsonBackReference
+    @JsonBackReference(value = "employee-trans")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_employee_id",nullable = false)
     private Employee employee;
 
-    //@JsonBackReference
+    @JsonBackReference(value = "entreprise-trans")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
