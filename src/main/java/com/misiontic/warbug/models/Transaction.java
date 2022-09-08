@@ -1,5 +1,6 @@
 package com.misiontic.warbug.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,10 +21,12 @@ public class Transaction {
     @Column(length = 50, nullable = false)
     private float amount;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_employee_id",nullable = false)
     private Employee employee;
 
+    //@JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
