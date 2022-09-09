@@ -1,12 +1,15 @@
 package com.misiontic.warbug.service.lmpl;
 
 import com.misiontic.warbug.models.Employee;
+import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.repository.IEmployeeRepository;
 import com.misiontic.warbug.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class EmployeeServiceImpl implements IEmployeeService {
@@ -21,7 +24,17 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public Employee update(Employee employee, Long id) throws Exception {
-        return null;
+        Employee enDB = repo.findById(id).get();
+        enDB.setEmail(employee.getEmail());
+
+        if (Objects.nonNull(employee.getEmail()) && !"".equalsIgnoreCase(employee.getEmail())) {
+            enDB.setEmail(employee.getEmail());
+        }
+
+        enDB.setUpdatedAt(LocalDateTime.now());
+        enDB.setCreatedAt(enDB.getCreatedAt());
+
+        return repo.save(enDB);
     }
 
     @Override
