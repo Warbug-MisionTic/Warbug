@@ -8,9 +8,9 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 
 ¿Quiénes intervienen en el desarrollo del demo? Para que nos conozcas mejor, este es nuestro equipo:
 
-•Desarrollador: Diego Fernando Gaitan Avella
-•Desarrollador: Sebastian Gutierrez Perez
-•Administrador Base de datos: Mauricio Alvarez Heredia
+-Desarrollador: Diego Fernando Gaitan Avella
+-Desarrollador: Sebastian Gutierrez Perez
+-Administrador Base de datos: Mauricio Alvarez Heredia
 •Analista: Johan Juan Diego Jimenez
 •Scrum Master: Glenda Lisseth Triviño
 
