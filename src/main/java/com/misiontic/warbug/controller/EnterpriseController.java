@@ -29,7 +29,7 @@ public class EnterpriseController {
         return service.readById(id);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Enterprise update(@RequestBody Enterprise enterprise, @PathVariable("id") Long id) throws Exception {
         return service.update(enterprise, id);
     }

@@ -29,7 +29,7 @@ public class EmployeeController {
         return service.readById(id);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Employee update(@RequestBody Employee employee, @PathVariable("id") Long id) throws Exception {
         return service.update(employee, id);
     }

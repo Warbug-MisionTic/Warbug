@@ -25,7 +25,6 @@ public class EnterpriseServicelmpl implements IEnterpriseService {
     @Override
     public Enterprise update(Enterprise enterprise, Long id) throws Exception {
         Enterprise enDB = repo.findById(id).get();
-        enDB.setName(enterprise.getName());
 
         if (Objects.nonNull(enterprise.getName()) && !"".equalsIgnoreCase(enterprise.getName())) {
             enDB.setName(enterprise.getName());

@@ -29,7 +29,7 @@ public class ProfileController {
         return service.readById(id);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Profile update(@RequestBody Profile profile, @PathVariable("id") Long id) throws Exception {
         return service.update(profile, id);
     }
