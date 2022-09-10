@@ -48,7 +48,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0 50px;
     height: 100%;
     text-align: center;
@@ -69,15 +69,16 @@ input {
         0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 408px;
+    width: 608px;
     max-width: 100%;
     min-height: 320px;
 }
 
 .form-container {
+    
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: 80px;
+    height: 50%;
     transition: all 0.6s ease-in-out;
 }
 
@@ -85,4 +86,16 @@ input {
     left: 0;
     width: 100%;
     z-index: 2;
+}
+.form-box{
+    margin-right: 1rem;
+}
+.logoImage{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 1.5rem;
+    
+     
 }
