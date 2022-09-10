@@ -16,11 +16,11 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 
 Tecnologías que utilizamos:
 
-•JAVA
-•HTML
-•PostgreSQL
-•Spring Boot
-•Thymeleaf
-•Docker
+- JAVA
+- HTML
+- PostgreSQL
+- Spring Boot
+- Thymeleaf
+- Docker
 
 ¡Nos comprometemos con lo que hacemos y desarrollamos tus sueños! ¡Animáte y pruébanos!
