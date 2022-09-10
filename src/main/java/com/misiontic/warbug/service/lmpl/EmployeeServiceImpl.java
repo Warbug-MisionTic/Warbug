@@ -25,11 +25,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public Employee update(Employee employee, Long id) throws Exception {
         Employee enDB = repo.findById(id).get();
-        enDB.setEmail(employee.getEmail());
 
         if (Objects.nonNull(employee.getEmail()) && !"".equalsIgnoreCase(employee.getEmail())) {
             enDB.setEmail(employee.getEmail());
         }
+
+        if (Objects.nonNull(employee.getPassword()) && !"".equalsIgnoreCase(employee.getPassword())) {
+            enDB.setPassword(employee.getPassword());
+        }
+
+        if (Objects.nonNull(employee.getRole())) {
+            enDB.setRole(employee.getRole());
+        }
+
 
         enDB.setUpdatedAt(LocalDateTime.now());
         enDB.setCreatedAt(enDB.getCreatedAt());

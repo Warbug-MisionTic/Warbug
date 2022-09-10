@@ -29,7 +29,7 @@ public class TransactionController {
         return service.readById(id);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Transaction update(@RequestBody Transaction transaction, @PathVariable("id") Long id) throws Exception {
         return service.update(transaction, id);
     }

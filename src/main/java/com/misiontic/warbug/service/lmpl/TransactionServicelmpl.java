@@ -25,15 +25,14 @@ public class TransactionServicelmpl implements ITransactionService {
     @Override
     public Transaction update(Transaction transaction, Long id) throws Exception {
         Transaction enDB = repo.findById(id).get();
-        enDB.setConcept(transaction.getConcept());
 
         if (Objects.nonNull(transaction.getConcept()) && !"".equalsIgnoreCase(transaction.getConcept())) {
             enDB.setConcept(transaction.getConcept());
         }
-        /* Validar esta condición porque no permite convertir float en String. Se parsea?
-        if (Objects.nonNull(transaction.getAmount()) && !"".equalsIgnoreCase(transaction.getAmount())) {
+        /* Validar esta condición porque no permite convertir float en String. Se parsea?*/
+        if (Objects.nonNull(transaction.getAmount()) && transaction.getAmount() != 0.0f) {
             enDB.setAmount(transaction.getAmount());
-        }*/
+        }
 
         enDB.setUpdatedAt(LocalDateTime.now());
         enDB.setCreatedAt(enDB.getCreatedAt());

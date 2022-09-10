@@ -25,7 +25,6 @@ public class ProfileServiceImpl implements IProfileService {
     @Override
     public Profile update(Profile profile, Long id) throws Exception {
         Profile enDB = repo.findById(id).get();
-        enDB.setImage(profile.getImage());
 
         if (Objects.nonNull(profile.getImage()) && !"".equalsIgnoreCase(profile.getImage())) {
             enDB.setImage(profile.getImage());
