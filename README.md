@@ -9,20 +9,18 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 ¿Quiénes intervienen en el desarrollo del demo? Para que nos conozcas mejor, este es nuestro equipo:
 
 •Desarrollador: Diego Fernando Gaitan Avella
-
 •Desarrollador: Sebastian Gutierrez Perez
-
-•	Administrador Base de datos: Mauricio Alvarez Heredia
-
-•	Analista: Johan Juan Diego Jimenez
-
-•	Scrum Master: Glenda Lisseth Triviño
+•Administrador Base de datos: Mauricio Alvarez Heredia
+•Analista: Johan Juan Diego Jimenez
+•Scrum Master: Glenda Lisseth Triviño
 
 Tecnologías que utilizamos:
 
-•	JAVA
-•	HTML
-•	PostgreSQL
-•	Spring Boot
+•JAVA
+•HTML
+•PostgreSQL
+•Spring Boot
+•Thymeleaf
+•Docker
 
 ¡Nos comprometemos con lo que hacemos y desarrollamos tus sueños! ¡Animáte y pruébanos!
