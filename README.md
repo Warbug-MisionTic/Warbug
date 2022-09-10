@@ -6,7 +6,7 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 
 ¿Cómo funciona el demo? Simple! En la plataforma serás el administrador y te encargas de ingresos y egresos de tu empresa. Tu rol en el sistema permite visualizar cada una de las transacciones en el tiempo, así mismo, otorgar permisos conforme las funciones de otros usuarios.
 
-¿Quiénes intervienen en el desarrollo del demo? 
+## ¿Quiénes intervienen en el desarrollo del demo?
 
 - Desarrollador: Diego Fernando Gaitan Avella
 - Desarrollador: Sebastian Gutierrez Perez
@@ -14,7 +14,7 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 - Analista: Johan Juan Diego Jimenez
 - Scrum Master: Glenda Lisseth Triviño
 
-Tecnologías que utilizamos:
+## Tecnologías que utilizamos:
 
 - JAVA
 - HTML
