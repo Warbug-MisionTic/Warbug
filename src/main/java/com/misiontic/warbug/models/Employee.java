@@ -1,5 +1,6 @@
 package com.misiontic.warbug.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -32,7 +33,8 @@ public class Employee {
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
-    @JsonManagedReference(value = "employee")
+    @JsonIgnore
+   // @JsonManagedReference(value = "employee")
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions;
 

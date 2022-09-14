@@ -3,11 +3,11 @@ package com.misiontic.warbug.controller;
 import com.misiontic.warbug.models.Transaction;
 import com.misiontic.warbug.service.ITransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
@@ -15,18 +15,14 @@ public class TransactionController {
     @Autowired
     private ITransactionService service;
 
-    @GetMapping("/hola")
-    public String hola(Model model) throws Exception {
-        /*model.addAttribute("Transacciones", service.readAll());*/
-        model.addAttribute("mensaje","hola desde thymeleaf");
-
-        return "hola";
+    @GetMapping
+    public List<Transaction> readAll() throws Exception {
+        return service.readAll();
     }
-
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
+    @GetMapping("/listar")
+    public String transacciones(Model model) throws Exception {
+        model.addAttribute("Transacciones", service.readAll());
+        return "transacciones/listar";
     }
 
     @PostMapping

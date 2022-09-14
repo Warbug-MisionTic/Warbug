@@ -11,11 +11,11 @@
 
 
 <body>
-<p th:text=${mensaje}></p>
+    <p th:text=${mensaje}></p>
     <div class="contenedor-total">
         <header class="encabezado">
             <div class="encabezado-imagen">
-                <img src="/Img/logo.jpg" alt="Logo">
+                <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
 
             <nav class="navegacion">
@@ -40,16 +40,17 @@
                         <th>Usuario</th>
                     </tr>
                     <tr th:each="Transaccion: ${Transacciones}">
-                        <td th:text="${Transaccion.idTransaction}"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td th:text="${Transaccion.concept}"></td>
+                        <td th:text="${Transaccion.amount}"></td>
+                        <td  th:text="${{Transaccion.createdAt}}"></td>
+                        <td ></td>
                     </tr>
-                </table>        
-        
+                </table>
+
             </div>
 
         </main>
     </div>
 </body>
+
 </html>
