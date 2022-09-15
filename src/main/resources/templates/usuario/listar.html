@@ -41,10 +41,10 @@
                         <th>Correo</th>
                         <th>Telefono</th>
                     </tr>
-                    <tr th:each="Transaccion: ${Transacciones}">
-                        <td th:text="${Transaccion.idTransaction}"></td>
-                        <td></td>
-                        <td></td>
+                    <tr th:each="Usuario: ${Usuarios}">
+                        <td th:text="${Usuario.name}"></td>
+                        <td th:text="${Usuario.email}"></td>
+                        <td th:text="${Usuario.profile.phone}"></td>
                     </tr>
                     <!--<tfoot style="vertical-align: bottom;">
                         <td style="border: 0;"></td>

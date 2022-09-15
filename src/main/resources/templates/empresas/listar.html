@@ -11,7 +11,6 @@
 
 
 <body>
-<p th:text=${mensaje}></p>
     <div class="contenedor-total">
         <header class="encabezado">
             <div class="encabezado-imagen">
@@ -41,10 +40,10 @@
                         <th>Direccion</th>
                         <th>Telefono</th>
                     </tr>
-                    <tr th:each="Transaccion: ${Transacciones}">
-                        <td th:text="${Transaccion.idTransaction}"></td>
-                        <td></td>
-                        <td></td>
+                    <tr th:each="Empresa: ${Empresas}">
+                        <td th:text="${Empresa.name}"></td>
+                        <td th:text="${Empresa.address}"></td>
+                        <td th:text="${Empresa.phone}"></td>
                     </tr>
                     <!--<tfoot style="vertical-align: bottom;">
                         <td style="border: 0;"></td>

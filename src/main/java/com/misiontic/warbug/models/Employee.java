@@ -17,8 +17,13 @@ public class Employee {
     @Column(length = 50, nullable = false, unique = true)
     private String email;
 
+    @Column(length = 50, nullable = false, unique = false)
+    private String name;
+
     @Column(length = 50, nullable = false)
     private Enum_RoleName role;
+
+
 
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
