@@ -3,11 +3,13 @@ package com.misiontic.warbug.controller;
 import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.service.IEnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/enterprises")
 public class EnterpriseController {
 
@@ -15,8 +17,9 @@ public class EnterpriseController {
     private IEnterpriseService service;
 
     @GetMapping
-    public List<Enterprise> readAll() throws Exception {
-        return service.readAll();
+    public String empresas(Model model) throws Exception {
+        model.addAttribute("Empresas", service.readAll());
+        return "empresas/listar";
     }
 
     @PostMapping
