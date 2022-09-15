@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/sistemadeingresosygastos.css">
+    <link rel="stylesheet" href="/assets/css/transacciones.css">
     <title>Nuevo Ingreso</title>
 </head>
 
@@ -29,7 +29,10 @@
         </header>
         <main>
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
-            <h2 class="subtitulo">Transacciones</h2>
+            <h2 class="subtitulo">Ingresos y egresos</h2>
+            <div class="buser-container">
+                <button class="button-user">Nuevo</button>
+            </div>
             <div class="labels-container">
                 <table class="Table">
                     <tr>
@@ -44,10 +47,17 @@
                         <td  th:text="${{Transaccion.createdAt}}"></td>
                         <td th:text="${Transaccion.employee.email}"></td>
                     </tr>
+                    <tfoot style="vertical-align: bottom;">
+                    <td style="border: 0;"></td>
+                    <td style="border: 0;"></td>
+                    <td style="border: 0;"></td>
+                    <td class="money-button" style="border: 0;">
+                        $$$
+                    </td>
+                    </tfoot>
                 </table>
 
             </div>
-
         </main>
     </div>
 </body>
