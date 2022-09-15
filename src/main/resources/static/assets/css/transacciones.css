@@ -262,7 +262,7 @@ table td {
 .money-button {
     margin-right: 7rem;
     border-radius: 1rem;
-    background-color: white;
+    background-color: rgb(255, 209, 209);
     width: 9rem;
     height: 3rem;
     font-size: 1.5rem;
@@ -271,10 +271,18 @@ table td {
     padding: 0.3rem;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
-    grid-column: 3;
-    grid-row: 6;
-
 }
+
+.money-button .total{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.money-button .total p{
+   font-size: 18px;
+}
+
 table tfoot {
     display: table-footer-group;
     vertical-align: middle;

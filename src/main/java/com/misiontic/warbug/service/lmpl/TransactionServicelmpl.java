@@ -54,4 +54,15 @@ public class TransactionServicelmpl implements ITransactionService {
     public void delete(Long id) throws Exception {
         repo.deleteById(id);
     }
+
+    @Override
+    public float sumTotalTransaction() {
+        List<Transaction> transactions = repo.findAll();
+        float total = 0.0f;
+        for (Transaction transation:transactions) {
+            total += transation.getAmount();
+        }
+        return total;
+    }
+
 }
