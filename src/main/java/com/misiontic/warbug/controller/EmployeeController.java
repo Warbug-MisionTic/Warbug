@@ -1,13 +1,16 @@
 package com.misiontic.warbug.controller;
 
 import com.misiontic.warbug.models.Employee;
+import com.misiontic.warbug.models.EmployeeProfile;
 import com.misiontic.warbug.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/employees")
 public class EmployeeController {
 
@@ -15,8 +18,9 @@ public class EmployeeController {
     private IEmployeeService service;
 
     @GetMapping
-    public List<Employee> readAll() throws Exception {
-        return service.readAll();
+    public String readAllEmployee(Model model){
+        model.addAttribute("Usuarios", service.readAllEmployee());
+        return "usuario/listar";
     }
 
     @PostMapping

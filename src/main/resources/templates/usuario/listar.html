@@ -15,7 +15,7 @@
     <div class="contenedor-total">
         <header class="encabezado">
             <div class="encabezado-imagen">
-                <img src="/Img/logo.jpg" alt="Logo">
+                <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
 
             <nav class="navegacion">
@@ -44,7 +44,7 @@
                     <tr th:each="Usuario: ${Usuarios}">
                         <td th:text="${Usuario.name}"></td>
                         <td th:text="${Usuario.email}"></td>
-                        <td th:text="${Usuario.profile.phone}"></td>
+                        <td th:text="${Usuario.phone}"></td>
                     </tr>
                     <!--<tfoot style="vertical-align: bottom;">
                         <td style="border: 0;"></td>
