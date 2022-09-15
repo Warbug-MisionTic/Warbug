@@ -1,7 +1,4 @@
 package com.misiontic.warbug.models;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,19 +19,15 @@ public class Transaction {
     @Column(length = 50, nullable = false)
     private float amount;
 
-    //@JsonBackReference(value = "employee")
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "fk_employee_id",nullable = false)
     private Employee employee;
 
-    @JsonBackReference( value = "enterprise")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt;
-
 }

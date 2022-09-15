@@ -1,9 +1,7 @@
 package com.misiontic.warbug.models;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 @Data
 @Entity
 @Table(name = "enterprise")
@@ -29,13 +27,4 @@ public class Enterprise {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt;
-
-    @JsonManagedReference()
-    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Employee> employees;
-
-    @JsonManagedReference(value = "enterprise")
-    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions;
-
 }

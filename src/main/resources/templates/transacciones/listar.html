@@ -11,7 +11,6 @@
 
 
 <body>
-    <p th:text=${mensaje}></p>
     <div class="contenedor-total">
         <header class="encabezado">
             <div class="encabezado-imagen">
@@ -30,7 +29,7 @@
         </header>
         <main>
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
-            <h2 class="subtitulo">Usuarios</h2>
+            <h2 class="subtitulo">Transacciones</h2>
             <div class="labels-container">
                 <table class="Table">
                     <tr>
@@ -43,7 +42,7 @@
                         <td th:text="${Transaccion.concept}"></td>
                         <td th:text="${Transaccion.amount}"></td>
                         <td  th:text="${{Transaccion.createdAt}}"></td>
-                        <td ></td>
+                        <td th:text="${Transaccion.employee.email}"></td>
                     </tr>
                 </table>
 

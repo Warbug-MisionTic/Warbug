@@ -8,18 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@RestController
+@Controller
 @RequestMapping("/transaction")
 public class TransactionController {
 
     @Autowired
     private ITransactionService service;
 
+
     @GetMapping
-    public List<Transaction> readAll() throws Exception {
-        return service.readAll();
-    }
-    @GetMapping("/listar")
     public String transacciones(Model model) throws Exception {
         model.addAttribute("Transacciones", service.readAll());
         return "transacciones/listar";
