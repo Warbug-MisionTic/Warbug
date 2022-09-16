@@ -11,4 +11,5 @@ public interface ITransactionService {
     Transaction readById(Long id) throws Exception;
     void delete(Long id) throws Exception;
 
+    float sumTotalTransaction();
 }

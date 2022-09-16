@@ -19,6 +19,7 @@ public class TransactionController {
     @GetMapping
     public String transacciones(Model model) throws Exception {
         model.addAttribute("Transacciones", service.readAll());
+        model.addAttribute("SumaTotal",service.sumTotalTransaction());
         return "transacciones/listar";
     }
 
