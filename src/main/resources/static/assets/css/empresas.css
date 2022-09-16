@@ -64,8 +64,15 @@ nav {
 .button-user:hover {
     background-color: grey;
     transition: 1000ms;
+    
+}
+a:active {
+    transform: scale(1.5);
 }
 
+a:focus {
+    outline: none;
+}
 .a2:hover {
     background-color: grey;
     transition: 1000ms;
@@ -281,3 +288,10 @@ table tfoot {
     border-color: inherit;
 
   }
+button:active {
+    transform: scale(1.5);
+}
+
+button:focus {
+    outline: none;
+}
