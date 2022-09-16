@@ -27,6 +27,6 @@ public class Employee {
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = fals    e)
     private String password;
 }
