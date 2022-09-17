@@ -105,8 +105,8 @@ input {
 }
 .col-3 {
     float: left;
-    width: 27.33%;
-    margin: 9px 2%;
+    width: 100%;
+    margin: 9px 0%;
     position: relative;
 
 }
@@ -124,7 +124,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     padding: 7px 14px 9px;
     transition: 0.4s;
-    width: 17rem;
+    /*width: 17rem;*/
 
 }
 
@@ -159,8 +159,8 @@ input[type="text"] {
 }
 
 .effect-7~.focus-border i:after {
-    left: 17rem;
-    right: 17rem;
+    left: auto;
+    right: 0;
 
 
 }
