@@ -23,9 +23,21 @@ public class EmployeeController {
         return "usuario/listar";
     }
 
-    @PostMapping
+    /*@PostMapping
     public Employee create(@RequestBody Employee employee) throws Exception {
         return service.create(employee);
+    }*/
+
+    @GetMapping("/add")
+    public String add(@ModelAttribute Employee employee, Model model) {
+        model.addAttribute("employee", new Employee());
+        return "usuario/agregar";
+    }
+
+    @PostMapping("/add")
+    public String addEmployee(@ModelAttribute Employee employee, Model model) throws Exception {
+        this.service.create(employee);
+        return "redirect:/usuario/listar";
     }
 
     @GetMapping("/{id}")

@@ -11,7 +11,7 @@
 
 
 <body>
-<p th:text=${mensaje}></p>
+
     <div class="contenedor-total">
         <header class="encabezado">
             <div class="encabezado-imagen">
@@ -32,8 +32,8 @@
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
             <h2 class="subtitulo">Usuarios</h2>
             <div class="buser-container">
-            <button class="button-user">Nuevo</button>
-        </div>
+                <button class="button-user"><a th:href="@{/add}">Nuevo</a></button>
+            </div>
             <div class="labels-container">
                 <table class="Table">
                     <tr>
