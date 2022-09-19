@@ -33,19 +33,18 @@
             <h2 class="subtitulo">Usuarios</h2>
             <div class="labels-container">
                 <form class="formulario"
-                th:action="@{/employees/nuevo}" method="post" th:object="${employee}"
+                th:action="@{/employees/saveEmployee}" method="post" th:object="${employee}"
                 >
                     <span>
                         <h3>Nuevo Usuario</h3>
                     </span>
                     <div class="formulario-container">
                         <label>Nombre</label>
-                        <td th:text="${Usuario.name}"></td>
-                        <input th:field="*{name}" type="text" placeholder=" Nombre" id="nombre">
+                        <input th:field="*{name}" type="text" placeholder="Nombre" >
                         <label>Correo</label>
-                        <input th:field="*{email}"  type="email" placeholder=" Correo electrónico" id="correo">
+                        <input th:field="*{email}"  type="email" placeholder="Correo electrónico" >
                         <label>Rol</label>
-                        <input th:field="*{role}"  type="text" placeholder="Rol" id="rol">
+                        <input th:field="*{role}"  type="text" placeholder="Rol" >
 
                         <div class="b-style ">
                             <button type="submit" class="button-container" href="#">Ingresar</button>

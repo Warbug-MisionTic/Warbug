@@ -25,8 +25,10 @@ public class EmployeeController {
         return "usuario/listar";
     }
 
-    @GetMapping("/employees/nuevo")
-    public String crearUsuario(){
+    @GetMapping("/nuevo")
+    public String crearUsuario(Model model){
+        Employee employee = new Employee();
+        model.addAttribute("employee",employee);
         return "usuario/agregar";
     }
 
