@@ -1,7 +1,9 @@
 package com.misiontic.warbug.controller;
 
 import com.misiontic.warbug.models.Employee;
+import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.service.IEmployeeService;
+import com.misiontic.warbug.service.IEnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,8 @@ public class EmployeeController {
     @Autowired
     private IEmployeeService service;
 
+    @Autowired
+    private IEnterpriseService Eservice;
 
     @GetMapping
     public String readAllEmployee(Model model){
@@ -26,10 +30,20 @@ public class EmployeeController {
     }
 
     @GetMapping("/nuevo")
-    public String crearUsuario(Model model){
+    public String crearUsuario(Model model) throws Exception {
         Employee employee = new Employee();
         model.addAttribute("employee",employee);
+        model.addAttribute("Enterprise",Eservice.readAll());
         return "usuario/agregar";
+    }
+
+    @PostMapping("/guardarUsuario")
+    public String guardarUsuario(@ModelAttribute("employee") Employee employee) throws Exception {
+        //Guardar Empleado en la base de datos
+        Enterprise enterprice = Eservice.readById(1l);
+        employee.setEnterprise(enterprice);
+        service.create(employee);
+        return "redirect:/employees";
     }
 
     /*@PostMapping
