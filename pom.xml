@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.3.4.RELEASE</version>
 	</parent>
 	<groupId>com.misiontic</groupId>
 	<artifactId>warbug</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>warbug</name>
 	<description>Proyecto de Mision Tic para llevar la contabilidad de una empresa </description>
+
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -65,6 +65,11 @@
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

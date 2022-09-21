@@ -1,7 +1,7 @@
 package com.misiontic.warbug.service.lmpl;
 
 
-import com.misiontic.warbug.service.ISecurityService;
+import com.misiontic.warbug.service.SecurityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SecurityServiceImpl implements ISecurityService {
+public class SecurityServiceImpl implements SecurityService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -34,15 +34,16 @@ public class SecurityServiceImpl implements ISecurityService {
     }
 
     @Override
-    public void autoLogin(String email, String password) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+    public void autoLogin(String username, String password) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
         if (usernamePasswordAuthenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-            logger.debug(String.format("Auto login %s successfully!", email));
+            logger.debug(String.format("Auto login %s successfully!", username));
         }
     }
 }
+

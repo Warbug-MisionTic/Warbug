@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <title>Login - Warbug project</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container login-container">
+
+            <form class="form-signin" method="POST" th:action="@{/login}">
+                <h2 class="form-heading">Inicie Sesión</h2>
+
+                <div class="form-group">
+                    <span th:text="${message}"></span>
+                    <input name="username" type="text" class="form-control" placeholder="Username"
+                           autofocus="true"/>
+
+                    <input name="password" type="password" class="form-control" placeholder="Password"/>
+                    <span class="has-error" th:text="${error}"></span>
+
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+                    <h4 class="text-center"><a href="/registration">Crear una cuenta</a></h4>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>

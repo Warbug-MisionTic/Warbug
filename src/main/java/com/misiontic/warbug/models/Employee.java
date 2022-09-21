@@ -15,13 +15,18 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEmployee;
 
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(length = 50, nullable = true, unique = false)
     private String email;
 
-    @Column(length = 50, nullable = false, unique = false)
+    @Column(length = 50, nullable = true, unique = false)
     private String name;
 
-    @Column(length = 50, nullable = false)
+    @Transient
+    private String passwordConfirm;
+
+
+    private String username;
+    @Column(length = 50, nullable = true)
     @ManyToMany
     private Set<Role> role;
 
@@ -29,10 +34,10 @@ public class Employee {
     private LocalDateTime updatedAt;
 
     @ManyToOne
-    @JoinColumn(name = "fk_enterprise_id",nullable = false)
+    @JoinColumn(name = "fk_enterprise_id",nullable = true)
     private Enterprise enterprise;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 500, nullable = true)
     private String password;
 
 

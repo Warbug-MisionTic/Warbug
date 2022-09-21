@@ -7,7 +7,17 @@ import com.misiontic.warbug.repository.IEmployeeRepository;
 import com.misiontic.warbug.repository.IRoleRepository;
 import com.misiontic.warbug.service.IEmployeeService;
 import com.misiontic.warbug.service.IProfileService;
+import com.misiontic.warbug.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -91,8 +101,4 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return employeeProfiles;
     }
 
-    @Override
-    public Employee findByEmail(String email) {
-        return repo.findByEmail(email);
-    }
 }

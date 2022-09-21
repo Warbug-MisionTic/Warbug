@@ -1,8 +1,8 @@
 package com.misiontic.warbug.controller;
 
-import com.misiontic.warbug.models.Employee;
 import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.service.IEnterpriseService;
+import com.misiontic.warbug.service.SecurityService;
 import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/enterprises")
 public class EnterpriseController {
-
     @Autowired
     private IEnterpriseService service;
 
