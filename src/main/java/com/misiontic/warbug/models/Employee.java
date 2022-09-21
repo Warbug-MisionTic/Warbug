@@ -23,7 +23,8 @@ public class Employee {
     @Column(length = 50, nullable = false)
     private Enum_RoleName role;
 
-
+    @Column(length = 50, nullable = true)
+    private String phone;
 
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;

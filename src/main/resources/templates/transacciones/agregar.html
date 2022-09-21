@@ -32,19 +32,21 @@
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
             <h2 class="subtitulo">Usuarios</h2>
             <div class="labels-container">
-                <form class="formulario">
+                <form class="formulario"
+                th:action="@{/transaction/guardarTransaccion}" method="post" th:object="${transaction}"
+                >
                     <span>
                         <h3>Nuevo Movimiento de Dinero</h3>
                     </span>
                     <div class="formulario-container">
-                        <label>Nombre</label>
-                        <input type="text" placeholder=" Nombre" id="nombre">
-                        <label>Correo</label>
-                        <input type="email" placeholder=" Correo electrónico" id="correo">
-                        <label>Rol</label>
-                        <input type="text" placeholder=" Lider" id="lider">
+                        <label>Monto</label>
+                        <input th:field="*{amount}" type="text" placeholder=" Monto" >
+                        <label>Concepto</label>
+                        <input th:field="*{concept}" type="text" placeholder=" Concepto" >
+                        <label>Fecha</label>
+                        <input th:field="*{date}" type="date" placeholder=" Fecha">
 
-                        <div class="b-style ">
+                        <div class="b-style">
                             <button class="button-container" href="#">Iniciar sesión</button>
                         </div>
                     </div>
