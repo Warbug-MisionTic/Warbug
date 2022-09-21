@@ -15,4 +15,7 @@ public interface IEmployeeService {
     void delete(Long id) throws Exception;
 
     List<EmployeeProfile> readAllEmployee();
+
+    Employee findByEmail(String email);
+
 }

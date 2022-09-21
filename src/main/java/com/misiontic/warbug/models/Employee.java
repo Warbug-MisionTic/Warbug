@@ -3,6 +3,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,9 +22,8 @@ public class Employee {
     private String name;
 
     @Column(length = 50, nullable = false)
-    private Enum_RoleName role;
-
-
+    @ManyToMany
+    private Set<Role> role;
 
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;
@@ -34,4 +34,6 @@ public class Employee {
 
     @Column(length = 50, nullable = false)
     private String password;
+
+
 }

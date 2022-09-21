@@ -2,16 +2,18 @@ package com.misiontic.warbug.service.lmpl;
 
 import com.misiontic.warbug.models.Employee;
 import com.misiontic.warbug.models.EmployeeProfile;
-import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.models.Profile;
 import com.misiontic.warbug.repository.IEmployeeRepository;
+import com.misiontic.warbug.repository.IRoleRepository;
 import com.misiontic.warbug.service.IEmployeeService;
 import com.misiontic.warbug.service.IProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,8 +25,15 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Autowired
     private IProfileService pro;
 
+    @Autowired
+    private IRoleRepository roleRepository;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public Employee create(Employee employee) throws Exception {
+        employee.setPassword(bCryptPasswordEncoder.encode(employee.getPassword()));
+        employee.setRole(new HashSet<>(roleRepository.findAll()));
         return repo.save(employee);
     }
 
@@ -80,5 +89,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
             employeeProfiles.add(employe);
         }
         return employeeProfiles;
+    }
+
+    @Override
+    public Employee findByEmail(String email) {
+        return repo.findByEmail(email);
     }
 }
