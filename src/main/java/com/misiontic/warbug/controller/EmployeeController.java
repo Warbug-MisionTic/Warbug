@@ -33,7 +33,6 @@ public class EmployeeController {
     public String crearUsuario(Model model) throws Exception {
         Employee employee = new Employee();
         model.addAttribute("employee",employee);
-        model.addAttribute("Enterprise",Eservice.readAll());
         return "usuario/agregar";
     }
 

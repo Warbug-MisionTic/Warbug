@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -31,17 +31,19 @@
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
             <h2 class="subtitulo">Empresas</h2>
             <div class="labels-container">
-                <form class="formulario">
+                <form class="formulario"
+                th:action="@{/enterprises/guardarEmpresa}" method="post" th:object="${enterprise}"
+                >
                     <span>
                         <h3>Nueva Empresa</h3>
                     </span>
                     <div class="formulario-container">
                         <label>Nombre</label>
-                        <input type="text" placeholder=" Nombre" id="nombre">
+                        <input th:field="*{name}" type="text" placeholder=" Nombre" >
                         <label>Correo</label>
-                        <input type="email" placeholder=" Correo electrónico" id="correo">
+                        <input th:field="*{email}" type="email" placeholder=" Correo electrónico" >
                         <label>Lider</label>
-                        <input type="text" placeholder=" Lider" id="lider">
+                        <input th:field="*{document}" type="text" placeholder=" Lider" >
 
                         <div class="b-style ">
                             <button class="button-container" href="#">Iniciar sesión</button>
