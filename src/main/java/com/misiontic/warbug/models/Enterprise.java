@@ -12,16 +12,19 @@ public class Enterprise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEnterprise;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true)
     private String name;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true , unique = true)
+    private String email;
+
+    @Column(length = 50 , nullable = true)
     private String document;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true)
     private String phone;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true)
     private String address;
 
     private LocalDateTime createdAt = LocalDateTime.now();
