@@ -24,11 +24,16 @@ public class Employee {
     @Transient
     private String passwordConfirm;
 
+<<<<<<< HEAD
 
     private String username;
     @Column(length = 50, nullable = true)
     @ManyToMany
     private Set<Role> role;
+=======
+    @Column(length = 50, nullable = true)
+    private String phone;
+>>>>>>> 0752c1d99b5a2fe30c36f94be80efe485359aa1b
 
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt;

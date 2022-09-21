@@ -32,7 +32,7 @@
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
             <h2 class="subtitulo">Ingresos y egresos</h2>
             <div class="buser-container">
-                <button class="button-user">Nuevo</button>
+                <a class="button-user" th:href="@{/transaction/nueva}">Nueva</a>
             </div>
             <div class="labels-container">
                 <table class="Table">
@@ -45,7 +45,7 @@
                     <tr th:each="Transaccion: ${Transacciones}">
                         <td th:text="${Transaccion.concept}"></td>
                         <td th:text="${Transaccion.amount}"></td>
-                        <td  th:text="${{Transaccion.createdAt}}"></td>
+                        <td  th:text="${{Transaccion.date}}"></td>
                         <td th:text="${Transaccion.employee.name}"></td>
                     </tr>
                     <tr class="separator" colspan="2"></tr>

@@ -24,8 +24,8 @@ public class EmployeeController {
     private IEnterpriseService Eservice;
 
     @GetMapping
-    public String readAllEmployee(Model model){
-        model.addAttribute("Usuarios", service.readAllEmployee());
+    public String readAllEmployee(Model model) throws Exception {
+        model.addAttribute("Usuarios", service.readAll());
         return "usuario/listar";
     }
 
