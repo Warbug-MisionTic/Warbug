@@ -27,7 +27,7 @@ public class TransactionController {
     private IEmployeeService Aservice;
 
 
-    @GetMapping
+    @GetMapping("/lista")
     public String transacciones(Model model) throws Exception {
         model.addAttribute("Transacciones", service.readAll());
         model.addAttribute("SumaTotal",service.sumTotalTransaction());

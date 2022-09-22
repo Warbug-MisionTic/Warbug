@@ -17,7 +17,7 @@ public class EnterpriseController {
     @Autowired
     private IEnterpriseService service;
 
-    @GetMapping
+    @GetMapping("/lista")
     public String empresas(Model model) throws Exception {
         model.addAttribute("Empresas", service.readAll());
         return "empresas/listar";

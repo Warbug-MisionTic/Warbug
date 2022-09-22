@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/usuarios.css">
+    <link rel="stylesheet" href="/assets/css/welcome.css">
     <title>Nuevo Ingreso</title>
 </head>
 
@@ -19,14 +19,16 @@
         <header class="encabezado">
             <div class="encabezado-imagen">
                 <img src="/assets/Img/logo.jpg" alt="Logo">
-                <h2>Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
+            <div class="welcome-container">
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
             </div>
 
             <nav class="navegacion">
                 <div class="navegacion-contenedor">
-                    <a class="a1" href="#">Ingresos y egresos</a>
-                    <a class="a2" href="#">Usuarios</a>
-                    <a class="a3" href="#">Empresas</a>
+                    <a class="a1" th:href="@{/transaction/lista}">Ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
 
                 </div>
 
@@ -35,9 +37,9 @@
         <main>
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
             <div class="buttons-container">
-                <a class="window1" href="#"> Sistema de gestión de ingresos y gastos</a>
-                <a class="window2" href="#"> Sistema de gestión de usuarios</a>
-                <a class="window3" href="#"> Sistema de gestión de empresas</a>
+                <a class="window1" th:href="@{/transaction/lista}"> Sistema de gestión de ingresos y gastos</a>
+                <a class="window2" th:href="@{/employees/lista}"> Sistema de gestión de usuarios</a>
+                <a class="window3" th:href="@{/enterprises/lista}"> Sistema de gestión de empresas</a>
             </div>
 
         </main>

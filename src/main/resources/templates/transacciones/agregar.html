@@ -15,12 +15,15 @@
             <div class="encabezado-imagen">
                 <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
+            <div class="welcome-container">
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
 
             <nav class="navegacion">
                 <div class="navegacion-contenedor">
-                    <a class="a1" href="#">Monto</a>
-                    <a class="a2" href="#">Concepto</a>
-                    <a class="a3" href="#">Fecha</a>
+                    <a class="a1" th:href="@{/transaction/lista}">ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
 
                 </div>
 
@@ -30,7 +33,7 @@
         </header>
         <main>
             <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
-            <h2 class="subtitulo">Usuarios</h2>
+            <h2 class="subtitulo">Ingresos y egresos</h2>
             <div class="labels-container">
                 <form class="formulario"
                 th:action="@{/transaction/guardarTransaccion}" method="post" th:object="${transaction}"
@@ -40,14 +43,14 @@
                     </span>
                     <div class="formulario-container">
                         <label>Monto</label>
-                        <input th:field="*{amount}" type="text" placeholder=" Monto" >
+                        <input th:field="*{amount}" type="text" placeholder="  Monto" >
                         <label>Concepto</label>
-                        <input th:field="*{concept}" type="text" placeholder=" Concepto" >
+                        <input th:field="*{concept}" type="text" placeholder="  Concepto" >
                         <label>Fecha</label>
-                        <input th:field="*{date}" type="date" placeholder=" Fecha">
+                        <input th:field="*{date}" type="date" placeholder="  Fecha">
 
                         <div class="b-style">
-                            <button class="button-container" href="#">Iniciar sesión</button>
+                            <button class="button-container" href="#">Ingresar</button>
                         </div>
                     </div>
 

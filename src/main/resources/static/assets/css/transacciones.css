@@ -90,8 +90,10 @@ main .titulo {
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.5rem;
-    color: black;
     margin-top: 2rem;
+    color:#FF4B2B;
+    text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 main .subtitulo {
@@ -101,6 +103,10 @@ main .subtitulo {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
     margin-top: 3rem;
+    color:#FF4B2B;
+    text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    text-decoration: none;
 }
 
 .labels-container {
@@ -167,9 +173,12 @@ main .subtitulo {
     transition: opacity 0.35s ease-in-out;
 }
 
+
 .navegacion {
     display: flex;
     justify-content: center;
+    margin-top: 5rem;
+
 }
 
 .navegacion-contenedor {
@@ -247,6 +256,10 @@ table td {
     text-decoration: none;
     border: 0;
     margin-right: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -274,4 +287,23 @@ table tfoot {
 
 .separator{
     height: 30px;
+}
+.welcome-container{
+    margin-top: 15rem;
+    color:#FF4B2B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    font-size: 0.9rem;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.h2welcome{
+    text-align: center;
+    margin: .5rem;
+
 }

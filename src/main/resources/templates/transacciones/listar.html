@@ -17,12 +17,15 @@
             <div class="encabezado-imagen">
                 <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
+            <div class="welcome-container">
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
 
             <nav class="navegacion">
                 <div class="navegacion-contenedor">
-                    <a class="a1" href="#">Ingresos y egresos</a>
-                    <a class="a2" href="#">Usuarios</a>
-                    <a class="a3" href="#">Empresas</a>
+                    <a class="a1" th:href="@{/transaction/lista}">Ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
 
                 </div>
 

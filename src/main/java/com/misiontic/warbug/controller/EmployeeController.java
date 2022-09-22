@@ -23,7 +23,7 @@ public class EmployeeController {
     @Autowired
     private IEnterpriseService Eservice;
 
-    @GetMapping
+    @GetMapping("/lista")
     public String readAllEmployee(Model model) throws Exception {
         model.addAttribute("Usuarios", service.readAll());
         return "usuario/listar";
