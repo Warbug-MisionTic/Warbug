@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/usuarios.css">
+    <title>Nuevo Ingreso</title>
+</head>
+
+
+<body>
+
+    <div class="contenedor-total" sec:authorize="isAuthenticated()">
+        <form id="logoutForm" method="POST" th:action="@{/logout}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        <header class="encabezado">
+            <div class="encabezado-imagen">
+                <img src="/assets/Img/logo.jpg" alt="Logo">
+                <h2>Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
+
+            <nav class="navegacion">
+                <div class="navegacion-contenedor">
+                    <a class="a1" href="#">Ingresos y egresos</a>
+                    <a class="a2" href="#">Usuarios</a>
+                    <a class="a3" href="#">Empresas</a>
+
+                </div>
+
+            </nav>
+        </header>
+        <main>
+            <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
+            <div class="buttons-container">
+                <a class="window1" href="#"> Sistema de gestión de ingresos y gastos</a>
+                <a class="window2" href="#"> Sistema de gestión de usuarios</a>
+                <a class="window3" href="#"> Sistema de gestión de empresas</a>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

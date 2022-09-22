@@ -29,7 +29,7 @@ public class UserController {
     @GetMapping("/registration")
     public String registration(Model model) {
         if (securityService.isAuthenticated()) {
-            return "redirect:/employees";
+            return "redirect:/";
         }
 
         model.addAttribute("userForm", new Employee());
@@ -38,27 +38,24 @@ public class UserController {
     }
 
     @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") Employee userForm, BindingResult bindingResult) throws Exception {
+    public String registration(@ModelAttribute("userForm") Employee userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
-
 
         if (bindingResult.hasErrors()) {
             return "registration";
         }
 
-        Enterprise enterprice = Eservice.readById(1l);
-        userForm.setEnterprise(enterprice);
-        userForm.setName("Holaaa");
-
         userService.save(userForm);
 
-        return "redirect:/employees";
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+
+        return "redirect:/welcome";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (securityService.isAuthenticated()) {
-            return "redirect:/employees";
+            return "redirect:/";
         }
 
         if (error != null)
@@ -68,6 +65,11 @@ public class UserController {
             model.addAttribute("message", "You have been logged out successfully.");
 
         return "login";
+    }
+
+    @GetMapping({"/", "/welcome"})
+    public String welcome(Model model) {
+        return "welcome";
     }
 
 
