@@ -26,11 +26,11 @@ public class Employee {
 
 
     private String username;
-    @Column(length = 50, nullable = true)
+    @Column(length = 50, nullable = false)
     @ManyToMany
     private Set<Role> role;
 
-    @Column(length = 50, nullable = true)
+    @Column(length = 50, nullable = false)
     private String phone;
 
     private LocalDateTime createdAt = LocalDateTime.now();

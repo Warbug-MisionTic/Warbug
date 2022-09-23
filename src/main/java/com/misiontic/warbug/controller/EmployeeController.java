@@ -4,14 +4,13 @@ import com.misiontic.warbug.models.Employee;
 import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.service.IEmployeeService;
 import com.misiontic.warbug.service.IEnterpriseService;
+import com.misiontic.warbug.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
-
-import java.util.List;
-
 
 @Controller
 @RequestMapping("/employees")
@@ -19,6 +18,9 @@ public class EmployeeController {
 
     @Autowired
     private IEmployeeService service;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private IEnterpriseService Eservice;
@@ -39,9 +41,15 @@ public class EmployeeController {
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute("employee") Employee employee) throws Exception {
         //Guardar Empleado en la base de datos
-        Enterprise enterprice = Eservice.readById(1l);
+        //Enterprise enterprice = Eservice.readById(1l);
+        //employee.setEnterprise(enterprice);
+        Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
+        Employee user = userService.findByUsername(loggedInUser.getName());
+        Enterprise enterprice = Eservice.readById(user.getIdEmployee());
         employee.setEnterprise(enterprice);
-        service.create(employee);
+
+        System.out.println(employee);
+        //service.create(employee);
         return "redirect:/employees";
     }
 

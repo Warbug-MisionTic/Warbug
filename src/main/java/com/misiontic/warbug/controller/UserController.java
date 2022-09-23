@@ -1,7 +1,6 @@
 package com.misiontic.warbug.controller;
 
 import com.misiontic.warbug.models.Employee;
-import com.misiontic.warbug.models.Enterprise;
 import com.misiontic.warbug.service.IEnterpriseService;
 import com.misiontic.warbug.service.SecurityService;
 import com.misiontic.warbug.service.UserService;
