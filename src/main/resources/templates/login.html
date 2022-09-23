@@ -12,38 +12,38 @@
 </head>
 
 <body>
-<div class="container" id="container">
-    <div class="form-container login-container">
-        <form method="POST" th:action="@{/login}">
-            <div class="form-box">
-                <h1>Inicie Sesión</h1>
+    <div class="container" id="container">
+        <div class="form-container login-container">
+            <form method="POST" th:action="@{/login}">
+                <div class="form-box">
+                    <h1>Inicie Sesión</h1>
 
-                <span>Si no tienes acceso habla con el administrador</span>
-                <div class="col-3">
-                    <input class="effect-7" name="username" type="email" placeholder="Username"/>
-                    <span class="focus-border">
+                    <span>Si no tienes acceso habla con el administrador</span>
+                    <div class="col-3">
+                        <input class="effect-7" name="username" type="email" placeholder="Email" />
+                        <span class="focus-border">
                             <i></i>
                         </span>
-                </div>
-                <div class="col-3">
-                    <input  class="effect-7" name="password" type="password" placeholder="Password"/>
-                    <span class="focus-border">
+                    </div>
+                    <div class="col-3">
+                        <input class="effect-7" name="password" type="password" placeholder="Password" />
+                        <span class="focus-border">
                             <i></i>
                         </span>
+                    </div>
+                    <span class="has-error" th:text="${error}"></span>
+
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+                    <button type="submit">Iniciar Sesión</button>
+                    <h4 class="text-center"><a href="/registration">Crear una cuenta</a></h4>
+
                 </div>
-                <span class="has-error" th:text="${error}"></span>
+                <img class="logoImage" src="/assets/Img/logo.jpg" alt="Error">
+            </form>
 
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-                <button type="submit">Iniciar Sesión</button>
-                <h4 class="text-center"><a href="/registration">Crear una cuenta</a></h4>
-
-            </div>
-            <img class="logoImage" src="/assets/Img/logo.jpg" alt="Error">
-        </form>
-
+        </div>
     </div>
-</div>
 </body>
 
 </html>

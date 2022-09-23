@@ -6,4 +6,5 @@ public interface UserService {
     void save(Employee user);
 
     Employee findByUsername(String username);
+
 }

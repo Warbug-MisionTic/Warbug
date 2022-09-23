@@ -46,6 +46,7 @@ public class EmployeeController {
         Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
         Employee user = userService.findByUsername(loggedInUser.getName());
         Enterprise enterprice = Eservice.readById(user.getIdEmployee());
+
         employee.setEnterprise(enterprice);
 
         System.out.println(employee);
