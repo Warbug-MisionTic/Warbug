@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div class="container" id="container">
+<div class="container" id="container" sec:authorize="isAuthenticated()">
     <div class="form-container login-container">
         <form method="POST" th:action="@{/login}">
             <div class="form-box">
