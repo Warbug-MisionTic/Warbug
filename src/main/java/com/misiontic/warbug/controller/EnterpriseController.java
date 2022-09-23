@@ -35,7 +35,7 @@ public class EnterpriseController {
         //Enterprise enterprice = Eservice.readById(1l);
         //enterprise.setEnterprise(enterprice);
         service.create(enterprise);
-        return "redirect:/enterprises";
+        return "redirect:/enterprises/lista";
     }
 
     /*

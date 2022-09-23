@@ -48,12 +48,16 @@
                         <label>Nombre</label>
                         <input th:field="*{name}" type="text" placeholder="  Nombre" >
                         <label>Correo</label>
-                        <input th:field="*{email}"  type="email" placeholder="  Correo electrónico" >
+                        <input th:field="*{username}"  type="email" placeholder="  Correo electrónico" >
                         <label>Contraseña</label>
                         <input th:field="*{password}"  type="password" placeholder="  Contraseña" >
                         <label>Telefono</label>
                         <input th:field="*{phone}"  type="text" placeholder="  Telefono" >
                         <label>Rol</label>
+                        <select th:field="*{role}">
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
                         <div class="b-style ">
                             <button type="submit" class="button-container">Guardar</button>
                         </div>
