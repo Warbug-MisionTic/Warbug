@@ -51,7 +51,7 @@ public class TransactionController {
         transaction.setEmployee(employee);
         service.create(transaction);
 
-        return "redirect:/transaction";
+        return "redirect:/transaction/lista";
     }
     /*
     @PostMapping

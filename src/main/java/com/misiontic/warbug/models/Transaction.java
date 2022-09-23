@@ -30,6 +30,7 @@ public class Transaction {
     @JoinColumn(name = "fk_enterprise_id",nullable = false)
     private Enterprise enterprise;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(length = 50, nullable = false)
     private String date;
 
