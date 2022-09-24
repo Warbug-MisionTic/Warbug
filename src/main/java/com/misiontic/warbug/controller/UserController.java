@@ -56,18 +56,17 @@ public class UserController {
         }
 
         if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
+            model.addAttribute("error", "Su nombre de usuario y contraseña no son válidos.");
 
         if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
+            model.addAttribute("message", "Ha sido desconectado con éxito.");
 
         return "login";
     }
 
-    @GetMapping({"/", "/welcome"})
+    @GetMapping({ "/", "/welcome" })
     public String welcome(Model model) {
         return "welcome";
     }
-
 
 }
