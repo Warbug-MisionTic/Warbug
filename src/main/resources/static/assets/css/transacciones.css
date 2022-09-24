@@ -309,3 +309,12 @@ table tfoot {
     margin: .5rem;
 
 }
+.peso{
+    margin-left: 5px;
+}
+
+.logout{
+    cursor: pointer;
+    color:#FF4B2B;
+     
+}

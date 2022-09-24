@@ -292,3 +292,9 @@ input[type="text"]:focus {outline:none;}
     padding: 1rem;
     
 }
+
+.logout{
+    cursor: pointer;
+    color:#FF4B2B;
+     
+}
