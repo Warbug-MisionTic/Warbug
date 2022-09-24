@@ -47,7 +47,7 @@
                     </tr>
                     <tr th:each="Transaccion: ${Transacciones}">
                         <td th:text="${Transaccion.concept}"></td>
-                        <td th:text="${Transaccion.amount}"></td>
+                        <td th:inline="text"> $ [[${#numbers.formatDecimal(Transaccion.amount, 0, 'COMMA', 2, 'POINT')}]]</td>
                         <td  th:text="${{Transaccion.date}}"></td>
                         <td th:text="${Transaccion.employee.name}"></td>
                     </tr>
@@ -58,7 +58,7 @@
                     <td style="border: 0;"></td>
                     <td class="money-button">
                         <div class="total">
-                             <p>Total :</p><span th:inline="text">$ [[${#numbers.formatDecimal(SumaTotal, 0, 'COMMA', 2, 'POINT')}]]</span>
+                             <p>Total: </p><span th:inline="text"> $ [[${#numbers.formatDecimal(SumaTotal, 0, 'COMMA', 2, 'POINT')}]]</span>
                         </div>
 
                     </td>
