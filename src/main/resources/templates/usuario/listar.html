@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/usuarios.css">
+    <link rel="stylesheet" href="/static/assets/css/usuarios.css">
+    <title>Empleados</title>
+</head>
+
+
+<body>
+
+    <div class="contenedor-total" sec:authorize="isAuthenticated()">
+        <form id="logoutForm" method="POST" th:action="@{/logout}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        <header class="encabezado">
+            <div class="encabezado-imagen">
+                <img src="/assets/Img/logo.jpg" alt="Logo">
+            </div>
+            <div class="welcome-container">
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a class= "logout" onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
+
+            <nav class="navegacion">
+                <div class="navegacion-contenedor">
+                    <a class="a1" th:href="@{/transaction/lista}">Ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
+
+                </div>
+
+            </nav>
+        </header>
+        <main>
+            <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
+            <h2 class="subtitulo">Usuarios</h2>
+            <div class="buser-container">
+                <a class="button-user" th:href="@{/employees/nuevo}">Nuevo</a>
+            </div>
+            <div class="labels-container">
+                <table class="Table">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                    </tr>
+                    <tr th:each="Usuario: ${Usuarios}">
+                        <td th:text="${Usuario.name}"></td>
+                        <td th:text="${Usuario.username}"></td>
+                        <td th:text="${Usuario.phone}"></td>
+                    </tr>
+                    <!--<tfoot style="vertical-align: bottom;">
+                        <td style="border: 0;"></td>
+                        <td style="border: 0;"></td>
+                        <td style="border: 0;"></td>
+                        <td class="money-button" style="border: 0;">
+                            $$$
+                        </td>
+                    </tfoot>-->
+                </table>        
+        
+            </div>
+            <!--<div class="mbutton-container">
+                <div class="money-button">$$$$</div>
+            </div>-->
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.misiontic.warbug.service.lmpl;
 
-import com.misiontic.warbug.models.Enterprise;
+import com.misiontic.warbug.models.Employee;
 import com.misiontic.warbug.models.Profile;
 import com.misiontic.warbug.repository.IProfileRepository;
 import com.misiontic.warbug.service.IProfileService;
@@ -53,5 +53,17 @@ public class ProfileServiceImpl implements IProfileService {
     @Override
     public void delete(Long id) throws Exception {
         repo.deleteById(id);
+    }
+
+    @Override
+    public Profile profileByEmployee(Employee employee){
+        List<Profile> profiles  = repo.findAll();
+        Profile employeeProfile  =  new Profile();
+         for(Profile pro: profiles){
+           if(pro.getEmployee() == employee){
+               employeeProfile.setPhone(pro.getPhone());
+            }
+        }
+        return employeeProfile;
     }
 }

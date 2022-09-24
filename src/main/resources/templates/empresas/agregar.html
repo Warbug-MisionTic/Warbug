@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/nuevaempresa.css">
+    <title>Nuevo Ingreso</title>
+</head>
+
+<body>
+<div class="contenedor-total" sec:authorize="isAuthenticated()">
+    <form id="logoutForm" method="POST" th:action="@{/logout}">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    </form>
+    <header class="encabezado">
+        <div class="encabezado-imagen">
+            <img src="/assets/Img/logo.jpg" alt="Logo">
+        </div>
+        <div class="welcome-container">
+            <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a class= "logout" onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+        </div>
+
+            <nav class="navegacion">
+                <div class="navegacion-contenedor">
+                    <a class="a1" th:href="@{/transaction/lista}">Ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
+
+                </div>
+
+            </nav>
+
+        </header>
+        <main>
+            <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
+            <h2 class="subtitulo">Empresas</h2>
+            <div class="labels-container">
+                <form class="formulario"
+                th:action="@{/enterprises/guardarEmpresa}" method="post" th:object="${enterprise}"
+                >
+                    <span>
+                        <h3>Nueva Empresa</h3>
+                    </span>
+                    <div class="formulario-container">
+                        <label>Nombre</label>
+                        <input th:field="*{name}" type="text" placeholder=" Nombre" >
+                        <label>Correo</label>
+                        <input th:field="*{email}" type="email" placeholder=" Correo electrónico" >
+                        <label>Lider</label>
+                        <input th:field="*{document}" type="text" placeholder=" Lider" >
+                        <label>Direccion</label>
+                        <input th:field="*{address}" type="text" placeholder=" Direccion" >
+                        <label>Telefono</label>
+                        <input th:field="*{phone}" type="text" placeholder=" Telefono" >
+
+                        <div class="b-style ">
+                            <button class="button-container" href="#">Registrar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>
