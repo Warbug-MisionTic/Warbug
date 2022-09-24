@@ -13,7 +13,7 @@
         0 10px 10px rgba(0, 0, 0, 0.22);
     background-color: white;
     width: 20%;
-    height: 100vh;
+    height: 150vh;
     position: relative;
     overflow: hidden;
     justify-content: center;
@@ -166,7 +166,7 @@ h3 {
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:#FF4B2B
-    
+
 
 }
 
@@ -244,11 +244,11 @@ input:focus + label, input:valid + label{
     background: white;
     padding: 0px 5px 0px 5px;
 }
-  
+
 .formulario-container {
     width:auto; height:auto; position:relative;
 }
-  
+
 .formulario-container label {
     font-size:16px;
     color:#FF4B2B;
@@ -256,12 +256,12 @@ input:focus + label, input:valid + label{
     position: absolute;
     top: 0;
     left: 0;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
     -webkit-transition:0.2s ease all;
     pointer-events: none;
 }
-  
+
 input[type="text"]:focus {outline:none;}
 */
 
@@ -304,7 +304,7 @@ input[type="text"]:focus {outline:none;}
   }
 
   .welcome-container{
-    margin-top: 15rem;
+    margin-top: 13rem;
     color:#FF4B2B;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;

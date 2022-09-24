@@ -15,7 +15,7 @@
         0 10px 10px rgba(0, 0, 0, 0.22);
     background-color: white;
     width: 20%;
-    height: 100vh;
+    height: 150vh;
     position: relative;
     overflow: hidden;
     justify-content: center;
@@ -305,7 +305,7 @@ input[type="text"]:focus {outline:none;}
   }
 
   .welcome-container{
-    margin-top: 15rem;
+    margin-top: 13rem;
     color:#FF4B2B;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;

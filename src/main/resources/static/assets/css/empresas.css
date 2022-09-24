@@ -7,8 +7,6 @@
 
 .encabezado {
     display: inline-flex;
-    /*background-color: rgb(211, 199, 199);*/
-    /*border: 1px solid #FF4B2B;*/
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
     background-color: white;
@@ -16,6 +14,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+    flex-direction: column;
     justify-content: center;
 
 
@@ -29,7 +28,6 @@ img {
 }
 
 nav {
-    position: absolute;
     top: 15rem;
     background-color: white;
     border-radius: 1rem;
@@ -184,8 +182,7 @@ main .subtitulo {
 .navegacion {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
-
+    margin: 20px;
 }
 
 .navegacion-contenedor {
@@ -197,7 +194,8 @@ main .subtitulo {
 }
 
 .encabezado-imagen {
-    margin: 40px 0;
+    display: flex;
+    justify-content: center;
 }
 
 table {
@@ -310,19 +308,17 @@ button:focus {
 }
 
 .welcome-container{
-    margin-top: 15rem;
     color:#FF4B2B;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     text-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
     font-size: 0.9rem;
-    position: absolute;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
+
 .h2welcome{
     text-align: center;
     margin: .5rem;
