@@ -1,6 +1,5 @@
 
-<<<<<<< HEAD
-<img  src="https://raw.githubusercontent.com/Warbug-MisionTic/Warbug/development/src/main/resources/static/Img/Warbug.png" width="200" height="200"> 
+<img  src="https://avatars.githubusercontent.com/u/111031191?s=200&v=4" width="200" height="200"> 
 
 # Warbug
 
@@ -46,5 +45,3 @@ https://warbug-app.herokuapp.com/
 https://test-warbug-app.herokuapp.com/
 
 ¡Nos comprometemos con lo que hacemos y desarrollamos tus sueños! ¡Animáte y pruébanos!
-=======
->>>>>>> 3b1da2a97ed81829f287eb69fa2323a711c80990
