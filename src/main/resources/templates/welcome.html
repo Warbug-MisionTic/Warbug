@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"><!--Logout-->
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,8 @@
 
 <body>
 
-    <div class="contenedor-total" sec:authorize="isAuthenticated()">
-        <form id="logoutForm" method="POST" th:action="@{/logout}">
+    <div class="contenedor-total" sec:authorize="isAuthenticated()"> <!--Logout-->
+        <form id="logoutForm" method="POST" th:action="@{/logout}"> <!--Logout-->
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
         <header class="encabezado">
@@ -21,7 +21,7 @@
                 <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
             <div class="welcome-container">
-                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a class= "logout" onclick="document.forms['logoutForm'].submit()">Salir</a></h2> <!--Logout-->
             </div>
 
             <nav class="navegacion">

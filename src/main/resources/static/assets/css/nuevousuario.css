@@ -322,3 +322,9 @@ input[type="text"]:focus {outline:none;}
     margin: .5rem;
 
 }
+
+.logout{
+    cursor: pointer;
+    color:#FF4B2B;
+     
+}

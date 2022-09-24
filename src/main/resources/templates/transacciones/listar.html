@@ -21,7 +21,7 @@
                 <img src="/assets/Img/logo.jpg" alt="Logo">
             </div>
             <div class="welcome-container">
-                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a class= "logout" onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
             </div>
 
             <nav class="navegacion">
@@ -61,7 +61,7 @@
                     <td style="border: 0;"></td>
                     <td class="money-button">
                         <div class="total">
-                             <p>Total: </p><span th:inline="text"> $ [[${#numbers.formatDecimal(SumaTotal, 0, 'COMMA', 2, 'POINT')}]]</span>
+                             <p>Total: </p><span class="peso" th:inline="text"> $ [[${#numbers.formatDecimal(SumaTotal, 0, 'COMMA', 2, 'POINT')}]]</span>
                         </div>
 
                     </td>
