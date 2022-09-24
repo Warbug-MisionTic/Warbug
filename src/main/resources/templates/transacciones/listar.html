@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/transacciones.css">
+    <link rel="stylesheet" href="/static/assets/css/transacciones.css">
+    <title>Nuevo Ingreso</title>
+</head>
+
+
+<body>
+    <div class="contenedor-total" sec:authorize="isAuthenticated()">
+        <form id="logoutForm" method="POST" th:action="@{/logout}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        <header class="encabezado">
+            <div class="encabezado-imagen">
+                <img src="/assets/Img/logo.jpg" alt="Logo">
+            </div>
+            <div class="welcome-container">
+                <h2 class="h2welcome">Bievenido <span sec:authentication="name"></span> | <a class= "logout" onclick="document.forms['logoutForm'].submit()">Salir</a></h2>
+            </div>
+
+            <nav class="navegacion">
+                <div class="navegacion-contenedor">
+                    <a class="a1" th:href="@{/transaction/lista}">Ingresos y egresos</a>
+                    <a class="a2" th:href="@{/employees/lista}">Usuarios</a>
+                    <a class="a3" th:href="@{/enterprises/lista}">Empresas</a>
+
+                </div>
+
+            </nav>
+        </header>
+        <main>
+            <h1 class="titulo">Sistema de gestión de Ingresos y Gastos</h1>
+            <h2 class="subtitulo">Ingresos y egresos</h2>
+            <div class="buser-container">
+                <a class="button-user" th:href="@{/transaction/nueva}">Nueva</a>
+            </div>
+            <div class="labels-container">
+                <table class="Table">
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                        <th>Fecha</th>
+                        <th>Usuario</th>
+                    </tr>
+                    <tr th:each="Transaccion: ${Transacciones}">
+                        <td th:text="${Transaccion.concept}"></td>
+                        <td th:inline="text"> $ [[${#numbers.formatDecimal(Transaccion.amount, 0, 'COMMA', 2, 'POINT')}]]</td>
+                        <td  th:text="${{Transaccion.date}}"></td>
+                        <td th:text="${Transaccion.employee.name}"></td>
+                    </tr>
+                    <tr class="separator" colspan="2"></tr>
+                    <tfoot>
+                    <td style="border: 0;"></td>
+                    <td style="border: 0;"></td>
+                    <td style="border: 0;"></td>
+                    <td class="money-button">
+                        <div class="total">
+                             <p>Total: </p><span class="peso" th:inline="text"> $ [[${#numbers.formatDecimal(SumaTotal, 0, 'COMMA', 2, 'POINT')}]]</span>
+                        </div>
+
+                    </td>
+                    </tfoot>
+                </table>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -48,7 +48,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0 50px;
     height: 100%;
     text-align: center;
@@ -57,8 +57,6 @@ form {
 input {
     background-color: #eee;
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
     width: 100%;
 }
 
@@ -69,15 +67,16 @@ input {
         0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
-    width: 408px;
+    width: 608px;
     max-width: 100%;
     min-height: 320px;
 }
 
 .form-container {
+    
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: 80px;
+    height: 50%;
     transition: all 0.6s ease-in-out;
 }
 
@@ -85,4 +84,97 @@ input {
     left: 0;
     width: 100%;
     z-index: 2;
+}
+.form-box{
+    margin-right: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+.logoImage{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 1.5rem;
+    
+     
+}
+
+:focus {
+    outline: none;
+}
+.col-3 {
+    float: left;
+    width: 100%;
+    margin: 9px 0%;
+    position: relative;
+
+}
+ /* necessary to give position: relative to parent. */
+input[type="text"] {
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+
+.effect-7 {
+    border: 1px solid #ccc;
+    padding: 7px 14px 9px;
+    transition: 0.4s;
+    /*width: 17rem;*/
+
+}
+
+.effect-7~.focus-border:before,
+.effect-7~.focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color:#FF4B2B;
+    transition: 0.4s;
+}
+
+.effect-7~.focus-border:after {
+    top: auto;
+    bottom: 0;
+
+}
+
+.effect-7~.focus-border i:before,
+.effect-7~.focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color:#FF4B2B;
+    transition: 0.6s;
+}
+
+.effect-7~.focus-border i:after {
+    left: auto;
+    right: 0;
+
+
+}
+
+.effect-7:focus~.focus-border:before,
+.effect-7:focus~.focus-border:after {
+    left: 0;
+    width: 100%;
+    transition: 0.4s;
+}
+
+.effect-7:focus~.focus-border i:before,
+.effect-7:focus~.focus-border i:after {
+    top: 0;
+    height: 100%;
+    transition: 0.6s;
 }
