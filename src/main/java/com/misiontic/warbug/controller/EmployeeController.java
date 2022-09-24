@@ -40,18 +40,13 @@ public class EmployeeController {
 
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute("employee") Employee employee) throws Exception {
-        //Guardar Empleado en la base de datos
-        //Enterprise enterprice = Eservice.readById(1l);
-        //employee.setEnterprise(enterprice);
         Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
         Employee user = userService.findByUsername(loggedInUser.getName());
-        Enterprise enterprice = Eservice.readById(user.getIdEmployee());
 
-        employee.setEnterprise(enterprice);
+        employee.setEnterprise(user.getEnterprise());
 
-        System.out.println(employee);
-        //service.create(employee);
-        return "redirect:/employees";
+        userService.save(employee);
+        return "redirect:/employees/lista";
     }
 
     /*@PostMapping

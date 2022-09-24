@@ -6,7 +6,10 @@ import com.misiontic.warbug.models.Transaction;
 import com.misiontic.warbug.service.IEmployeeService;
 import com.misiontic.warbug.service.IEnterpriseService;
 import com.misiontic.warbug.service.ITransactionService;
+import com.misiontic.warbug.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +29,9 @@ public class TransactionController {
     @Autowired
     private IEmployeeService Aservice;
 
+    @Autowired
+    private UserService userService;
+
 
     @GetMapping("/lista")
     public String transacciones(Model model) throws Exception {
@@ -44,11 +50,13 @@ public class TransactionController {
     @PostMapping("/guardarTransaccion")
     public String guardarTransaccion(@ModelAttribute("transaction") Transaction transaction) throws Exception {
         //Guardar Transaccion en la base de datos
-        Enterprise enterprice = Eservice.readById(1l);
-        transaction.setEnterprise(enterprice);
+        Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
+        Employee user = userService.findByUsername(loggedInUser.getName());
 
-        Employee employee = Aservice.readById(1l);
-        transaction.setEmployee(employee);
+        transaction.setEnterprise(user.getEnterprise());
+
+        transaction.setEmployee(user);
+
         service.create(transaction);
 
         return "redirect:/transaction/lista";

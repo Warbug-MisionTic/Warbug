@@ -276,6 +276,8 @@ table td {
     color:#f82500;
     font-size: 18px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
 
 }
 

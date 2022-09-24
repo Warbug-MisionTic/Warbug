@@ -31,9 +31,6 @@ public class EnterpriseController {
 
     @PostMapping("/guardarEmpresa")
     public String guardarEmpresa(@ModelAttribute("enterprise") Enterprise enterprise) throws Exception {
-        //Guardar Empresa en la base de datos
-        //Enterprise enterprice = Eservice.readById(1l);
-        //enterprise.setEnterprise(enterprice);
         service.create(enterprise);
         return "redirect:/enterprises/lista";
     }
