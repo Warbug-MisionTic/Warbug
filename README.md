@@ -1,5 +1,5 @@
 
-<img  src="https://avatars.githubusercontent.com/u/111031191?s=200&v=4" width="200" height="200"> 
+![Green Gaming Warbug](https://user-images.githubusercontent.com/111029511/192347522-dd1f177e-bb4b-490c-9994-8a43b6af3d87.png)
 
 # Warbug
 
@@ -36,6 +36,7 @@ Por ejemplo: A través de este repositorio se desarrolló un aplicativo tipo dem
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![InteliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=flat-square&logo=intellij-idea&logoColor=white)
 
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0429.gif" width="400px">
 
 ## Proyecto web oficial:
 
@@ -43,5 +44,12 @@ https://warbug-app.herokuapp.com/
 
 ## Proyecto web testing:
 https://test-warbug-app.herokuapp.com/
+
+<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0429.gif" width="400px">
+
+
+---
+#### Thanks for visiting 😉
+![VisitorCount](https://profile-counter.glitch.me/Warbug/count.svg)
 
 ¡Nos comprometemos con lo que hacemos y desarrollamos tus sueños! ¡Animáte y pruébanos!
